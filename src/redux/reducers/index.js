@@ -32,4 +32,4 @@ const reducers = combineReducers({
     monthlySalary: monthlySalaryReducers
 });
 
-export default (state, action) => reducers(state, action);  
+export default reducers

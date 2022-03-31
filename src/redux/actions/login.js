@@ -10,7 +10,7 @@ export const login = (data) => async dispatch => {
             data: data
         });
 
-        if(res.status == 200 ){
+        if(res.status === "200" ){
             localStorage.setItem("token", res.data.accessToken);
             localStorage.setItem("username", res.data.username);
             dispatch({
@@ -43,7 +43,7 @@ export const signUp = (data) => async dispatch => {
             data: data
         });
 
-        if(res.status == 200 ){
+        if(res.status === "200" ){
             dispatch({
                 type: SIGNUP,
                 data: res.data

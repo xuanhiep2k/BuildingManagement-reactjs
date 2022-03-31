@@ -12,7 +12,7 @@ export const getAllRegisterdServices = (companyId) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ALL,
                 data: res.data
@@ -44,7 +44,7 @@ export const updateRegisterdService = (id,registerdService) => async dispatch =>
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: UPDATE,
                 data: res.data
@@ -74,7 +74,7 @@ export const deleteRegisterdService = (id) => async dispatch => {
                 "Authorization": "Bearer " + localStorage.getItem("token"),
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: DELETE,
                 data: res.data
@@ -105,7 +105,7 @@ export const getALLServicesToAdd = () => async dispatch =>{
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             console.log("getAllServiceToAdd")
             dispatch({
                 type: GET_ALL_SERVICES_TO_ADD,
@@ -138,7 +138,7 @@ export const registerServiceForCompany = (idCompany,idService,data) => async dis
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: REGISTER_SERVICE_FOR_COMPANY,
                 data: res.data.message
@@ -170,7 +170,7 @@ export const getCompaniesForRegistrationByName = (name) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_COMPANIES_FOR_REGISTRATION_BY_NAME,
                 data: res.data
@@ -201,7 +201,7 @@ export const getAllCompanyForRegistration = () => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ALL_COMPANY,
                 data: res.data
@@ -232,7 +232,7 @@ export const getServicesForRegistrationByName = (name) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_SERVICES_BY_NAME,
                 data: res.data
@@ -263,7 +263,7 @@ export const getAllServicesForRegistration = () => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ALL_SERVICES,
                 data: res.data

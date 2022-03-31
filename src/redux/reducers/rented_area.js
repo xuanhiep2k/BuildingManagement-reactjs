@@ -1,6 +1,6 @@
 import { ERROR } from "../constants/base";
 import { GET_THE_REST_AREA } from "../constants/floor";
-import { DELETE, GET_ALL, POST, UPDATE, REGISTER_CONTRACT, GET_COMPANIES_FOR_REGISTRATION_BY_NAME, GET_ALL_COMPANIES } from "../constants/rented_area";
+import { DELETE, GET_ALL, UPDATE, REGISTER_CONTRACT, GET_COMPANIES_FOR_REGISTRATION_BY_NAME, GET_ALL_COMPANIES } from "../constants/rented_area";
 
 const initState = {
     data: [],

@@ -14,7 +14,7 @@ export const getAllFloors = () => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: GET_ALL,
                 data: res.data
@@ -45,7 +45,7 @@ export const getFloorById = (id) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: GET_ONE,
                 data: res.data
@@ -76,7 +76,7 @@ export const updateFloor = (id, data) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: UPDATE,
                 data: res.data
@@ -107,7 +107,7 @@ export const createNewFloor = (data) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: POST,
                 data: res.data
@@ -137,7 +137,7 @@ export const deleteFloor = (id) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: DELETE,
                 data: res.data

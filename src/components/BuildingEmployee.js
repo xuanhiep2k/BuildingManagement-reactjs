@@ -8,11 +8,10 @@ import '../css/form.css'
 import '../css/dialog.css'
 import '../css/search_bar.css'
 import { useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
-import { getSalaryById, getAllSalary } from '../redux/actions/salary';
-import { createNewBuildingEmployee, deleteBuildingEmployee, getAllBuildingEmployees, getBuildingEmployeeById, updateBuildingEmployee, getBuildingEmployeeByName } from '../redux/actions/building_employee';
+import { getAllSalary } from '../redux/actions/salary';
+import { createNewBuildingEmployee, deleteBuildingEmployee, getAllBuildingEmployees, updateBuildingEmployee, getBuildingEmployeeByName } from '../redux/actions/building_employee';
 
 const BuildingEmployee = () => {
     const salaryData = useSelector(state => state.salary.salary);
@@ -39,7 +38,7 @@ const BuildingEmployee = () => {
         // console.log('dispatched');
         return () => {
         }
-    }, [location.pathname])
+    }, [location.pathname, dispatch])
 
     useEffect(() => {
         setBuildingEmployees(data);
@@ -52,7 +51,7 @@ const BuildingEmployee = () => {
     useEffect(() => {
         setSalary(salaryData);
         setTimeout(() => {console.log('salary updated: ',salary)}, 600);
-    }, [salaryData])
+    }, [salaryData, salary])
 
     const onDobChange = (e) => {
         setDob(e.target.value);
@@ -169,7 +168,6 @@ const BuildingEmployee = () => {
         
         const position = document.getElementById('position').value;
         const salaryId = document.getElementById('salary-id').textContent;
-        console.log('salaryID=',salaryId);
         const data = {
             address: address,
             name: name,
@@ -212,6 +210,9 @@ const BuildingEmployee = () => {
         return phoneNumber.match(regPhone);
     }
 
+    const onPrevent = (e) => {
+        e.preventDefault()
+    }
     return (
         <>
             <div style={{ position: 'relative' }}>
@@ -308,7 +309,7 @@ const BuildingEmployee = () => {
                                     Tìm kiếm nhân viên:
                                     <br />
                             </div>                            
-                            <form action="javascript:" class="search-bar">
+                            <form action={onPrevent} class="search-bar">
                                 <input value={name} onChange={(e) => {onNameChange(e)}}type="search" name="search" pattern=".*\S.*" required />
                                 <button onClick={() => searchBuildingEmployeeByName()} class="search-btn" type="submit">
                                     <span>Search</span>

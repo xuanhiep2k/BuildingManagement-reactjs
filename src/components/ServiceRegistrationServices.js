@@ -13,7 +13,7 @@ import { getCompanyById } from '../redux/actions/company';
 
 
 
-function ServiceRegistration_Services() {
+function ServiceRegistrationServices() {
     const data = useSelector(state => state.registeredService.allServices)
     const registerdServices = useSelector(state => state.registeredService.data)
 
@@ -33,8 +33,6 @@ function ServiceRegistration_Services() {
     const company = useSelector(state => state.company.company)
 
     // Lấy message thành công thêm hay không sau khi thêm dịch vụ
-    const message = useSelector(state => state.registeredService.message)
-    const error = useSelector(state => state.registeredService.error)
     const [startDate, setStartDate] = useState(null)
     const [description, setDescription] = useState("")
 
@@ -54,7 +52,7 @@ function ServiceRegistration_Services() {
         setAllServices(data);
         console.log(allServices)
         console.log(data)
-    }, [data])
+    }, [data, allServices])
 
 
 
@@ -104,6 +102,9 @@ function ServiceRegistration_Services() {
         dispatch(getServicesForRegistrationByName(serviceName))
     }
 
+    const onPrevent = (e) => {
+        e.preventDefault()
+    }
     return (
         doneRegistration ?
             <Redirect push to={{
@@ -167,9 +168,9 @@ function ServiceRegistration_Services() {
                                     <br />
 
                                 </div>
-                                <form action="javascript:" class="search-bar" style={{ marginRight: "-45px" }}>
+                                <form action={onPrevent} class="search-bar" style={{ marginRight: "-45px" }}>
                                     <input onChange={(e) => { searchBarChange(e) }} type="search" name="search" pattern=".*\S.*" required />
-                                    <button onClick={() => { searchClick() }} class="search-btn" type="submit">
+                                    <button onClick={(e) => { searchClick() }} class="search-btn" type="submit">
                                         <span>Search</span>
                                     </button>
                                 </form>
@@ -224,5 +225,5 @@ function ServiceRegistration_Services() {
     )
 }
 
-export default ServiceRegistration_Services;
+export default ServiceRegistrationServices;
 

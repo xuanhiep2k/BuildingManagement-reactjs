@@ -5,14 +5,12 @@ import {
 } from 'react-router-dom'
 
 import { Redirect, useLocation } from 'react-router'
-import { useDispatch } from 'react-redux'
 // import Logo from './Logo'
 
 const Header = () => {
     const [isLogout, setIsLogout] = useState(false);
     const username = localStorage.getItem('username');
     const token = localStorage.getItem('token');
-    const isAdmin = localStorage.getItem('isAdmin');
     // const dispatch = useDispatch();
     const location = useLocation();
     useEffect(() => {

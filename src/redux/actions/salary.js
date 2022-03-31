@@ -11,7 +11,7 @@ export const getSalaryByService = (serviceId) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'GET_SALARY_BY_SERVICE',
                 data: res.data
@@ -42,7 +42,7 @@ export const getSalaryById = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             console.log('dispatched');
             dispatch({
                 type: 'GET_ONE_SALARY',
@@ -74,7 +74,7 @@ export const getAllSalary = () => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'GET_ALL_SALARY',
                 data: res.data
@@ -107,7 +107,7 @@ export const createNewSalary = (serviceId, data) => async dispatch => {
             serviceId: serviceId,
             data: data,
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'CREATE_SALARY',
                 data: res.data
@@ -139,7 +139,7 @@ export const updateSalary = (id, data) => async dispatch => {
             },
             data: data
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'UPDATE',
                 data: res.data
@@ -170,7 +170,7 @@ export const deleteSalary = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             },
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'DELETE',
                 data: res.data

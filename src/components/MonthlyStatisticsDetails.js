@@ -1,11 +1,8 @@
 import React from 'react';
-import { useState } from 'react';
 import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import moment from 'moment';
-import { getAllRentedAreasOfCompany } from '../redux/actions/statistics_rented_areas';
-import { getCompanyById } from '../redux/actions/company';
 import { getAllMonthlyBills, getAllMonthlyServiceBills } from '../redux/actions/monthly_statistics_detail';
 function MonthlyStatisticDetails() {
 
@@ -24,7 +21,7 @@ function MonthlyStatisticDetails() {
         return () => {
 
         }
-    }, [location.pathname])
+    }, [location.pathname, companyId, monthId, dispatch])
 
     return (
         <div style={{ position: 'relative' }}>

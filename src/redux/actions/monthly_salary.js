@@ -14,7 +14,7 @@ export const getAllSalaryOfMonth = (month) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_MONTHLY_SALARY,
                 data: res.data

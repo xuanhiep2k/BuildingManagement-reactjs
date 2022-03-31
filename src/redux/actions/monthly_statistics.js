@@ -14,7 +14,7 @@ export const getAllMonthlyStatsOfCompanies = (month) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === "200"){
             dispatch({
                 type: GET_ALL_MONTHLY_STAT_OF_COMPANIES,
                 data: res.data

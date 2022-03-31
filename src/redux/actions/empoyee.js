@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ERROR } from "../constants/base";
-import { DELETE, GET_ALL, GET_ONE, POST, UPDATE } from "../constants/employee";
+import { DELETE, GET_ALL, POST, UPDATE } from "../constants/employee";
 
 
 export const getAllEmployeeBy = (companyId) => async dispatch => {
@@ -14,7 +14,7 @@ export const getAllEmployeeBy = (companyId) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ALL,
                 data: res.data
@@ -48,7 +48,7 @@ export const createEmployee = (data, companyId) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: POST,
                 data: res.data
@@ -80,7 +80,7 @@ export const updateEmployee = (id, data) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: UPDATE,
                 data: res.data
@@ -111,7 +111,7 @@ export const deleteEmployee = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: DELETE,
                 data: res.data

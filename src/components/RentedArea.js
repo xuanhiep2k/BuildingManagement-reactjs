@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router';
-import { deleteRentedArea, getAllRentedAreas, getTheRestArea, updateRegisterdRentedArea } from '../redux/actions/rented_area';
+import { deleteRentedArea, getAllRentedAreas, updateRegisterdRentedArea } from '../redux/actions/rented_area';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import '../css/loading.css'
@@ -20,7 +20,7 @@ function RentedArea() {
     const [registeredRentedArea, setregisteredRentedArea] = useState(null);
 
     const [rentedDate, setRentedDate] = useState(null)
-    const [expiredDate, setExpiredDate] = useState(null)
+    const [setExpiredDate] = useState(null)
     const [rentedArea, setRentedArea] = useState(null)
     const [position, setPosition] = useState(null)
 
@@ -60,7 +60,7 @@ function RentedArea() {
         return () => {
 
         }
-    }, [location.pathname])
+    }, [location.pathname, floorId, dispatch])
     const removeRentedArea = (id) => {
         if (id) {
             setIconLoad(true)

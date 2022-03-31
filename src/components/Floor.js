@@ -26,7 +26,7 @@ function Floor() {
         return () => {
 
         }
-    }, [location.pathname])
+    }, [location.pathname, dispatch])
     const editClick = (item) => {
         const nameFloorTag = document.querySelector("#name-floor");
         const pricePerM2Tag = document.querySelector("#price-per-M2");
@@ -139,9 +139,6 @@ function Floor() {
         document.querySelector('.form-post').classList.remove('active');
     }
 
-    const onSubmit = () => (data) => {
-        console.log(data);
-    }
     return (
         <div style={{ position: 'relative' }}>
             <div class="loading-content" style={{ display: iconLoad ? "block" : "none" }}>

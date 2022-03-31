@@ -2,12 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../css/company.css'
 import '../css/form.css'
 import '../css/dialog.css'
-import { getCompaniesForRegistrationByName, saveCompanyToRedux,getAllCompanyForRegistration} from '../redux/actions/registed_service';
-import { Link } from 'react-router-dom';
 import '../css/search_bar.css'
 import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllCompany, createNewCompany, updateCompany, deleteCompany } from '../redux/actions/company';
 import { createEmployee, deleteEmployee, getAllEmployeeBy, updateEmployee } from '../redux/actions/empoyee';
 
 const Employee = () => {
@@ -109,7 +106,7 @@ const Employee = () => {
     const removeEmployee = (id) => {
         if (id) {
             dispatch(deleteEmployee(id));
-            const tmpEmployees = employees.filter(emp => emp.id != id);
+            const tmpEmployees = employees.filter(emp => emp.id !== id);
             setEmployees(tmpEmployees);
         }
     }
@@ -142,12 +139,15 @@ const Employee = () => {
     }
 
     const searchEmployee = () => {
-        if(nameSearch.trim().length == 0)
+        if(nameSearch.trim().length === 0)
             return;
         const tmpEmployees = employees.filter(emp => emp.name.includes(nameSearch.trim()));
         setEmployees(tmpEmployees);
     }
 
+    const onPrevent = (e) => {
+        e.preventDefault()
+    }
 
     return (
         <div style={{ position: 'relative' }}>
@@ -192,9 +192,9 @@ const Employee = () => {
                         <div style={{ fontSize: "20px", marginLeft: "-20px" }} className="admin-post__title">
                             Danh sách nhân viên
                         </div>
-                        <form action="javascript:" class="search-bar">
+                        <form action={onPrevent} class="search-bar">
                             <input placeholder='Tìm kiếm nhân viên theo tên' type="search" name="search" pattern=".*\S.*" required onChange={(e) => setNameSearch(e.target.value)}/>
-                            <button onClick={() => searchEmployee()} class="search-btn" type="submit">
+                            <button onClick={(e) => searchEmployee()} class="search-btn" type="submit">
                                 <span>Search</span>
                             </button>
                         </form> 

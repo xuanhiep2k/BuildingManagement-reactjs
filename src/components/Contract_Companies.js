@@ -142,16 +142,16 @@ const ContractCompany = () => {
         }, 1000)
     }
 
-
-
-
-
     const searchBarChange = (e) => {
         setCompanyName(e.target.value)
     }
 
     const findCompaniesByNameClick = () => {
         dispatch(getCompaniesForRegistrationByName(companyName))
+    }
+
+    const onPrevent = (e) => {
+        e.preventDefault()
     }
     return (
         doneRegistration ?
@@ -215,7 +215,7 @@ const ContractCompany = () => {
                                 <div style={{ fontSize: "20px", marginLeft: "-20px" }} className="admin-post__title">
                                     Chọn công ty để đăng ký hợp đồng
                                 </div>
-                                <form action="javascript:" class="search-bar" style={{ marginRight: "-45px" }}>
+                                <form action={onPrevent} class="search-bar" style={{ marginRight: "-45px" }}>
                                     <input value={companyName} onChange={(e) => { searchBarChange(e) }} type="search" name="search" pattern=".*\S.*" required />
                                     <button onClick={() => { findCompaniesByNameClick() }} class="search-btn" type="submit">
                                         <span>Search</span>

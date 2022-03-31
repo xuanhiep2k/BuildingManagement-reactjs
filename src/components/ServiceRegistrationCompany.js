@@ -8,7 +8,7 @@ import { getCompaniesForRegistrationByName, saveCompanyToRedux, getAllCompanyFor
 import { Link } from 'react-router-dom';
 import '../css/search_bar.css'
 
-const ServiceRegistration_Company = () => {
+const ServiceRegistrationCompany = () => {
     const data = useSelector(state => state.registeredService.data)
     const location = useLocation();
 
@@ -36,6 +36,9 @@ const ServiceRegistration_Company = () => {
         dispatch(getCompaniesForRegistrationByName(companyName))
     }
 
+    const onPrevent = (e) => {
+        e.preventDefault()
+    }
     return (
         <>
             <div style={{ position: 'relative' }} >
@@ -45,7 +48,7 @@ const ServiceRegistration_Company = () => {
                             <div style={{ fontSize: "20px", marginLeft: "-20px" }} className="admin-post__title">
                                 Chọn công ty để đăng ký hoặc hủy dịch vụ
                             </div>
-                            <form action="javascript:" class="search-bar" style={{ marginRight: "-45px" }}>
+                            <form action={onPrevent} class="search-bar" style={{ marginRight: "-45px" }}>
                                 <input value={companyName} onChange={(e) => { searchBarChange(e) }} type="search" name="search" pattern=".*\S.*" required />
                                 <button onClick={() => { findCompaniesByNameClick() }} class="search-btn" type="submit">
                                     <span>Search</span>
@@ -106,4 +109,4 @@ const ServiceRegistration_Company = () => {
     )
 };
 
-export default ServiceRegistration_Company;
+export default ServiceRegistrationCompany;

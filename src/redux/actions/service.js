@@ -12,7 +12,7 @@ export const getAllService = () => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ALL,
                 data: res.data
@@ -43,7 +43,7 @@ export const getServiceById = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ONE,
                 data: res.data
@@ -76,7 +76,7 @@ export const getServiceByName = (name) => async dispatch => {
             }
         })
         
-        if(res.status == 200){
+        if(res.status === 200){
             console.log('dispatched: ');
             dispatch({
                 type: 'GET_SERVICE_BY_NAME',
@@ -109,7 +109,7 @@ export const createNewService = (data) => async dispatch => {
             },
             data: data
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: POST,
                 data: res.data
@@ -141,7 +141,7 @@ export const updateService = (id, data) => async dispatch => {
             },
             data: data
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: UPDATE,
                 data: res.data
@@ -172,7 +172,7 @@ export const deleteService = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: DELETE,
                 data: res.data

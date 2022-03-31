@@ -11,7 +11,7 @@ export const getAllBuildingEmployees = () => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             
             dispatch({
                 type: 'GET_ALL_BUILDING_EMPLOYEE',
@@ -43,7 +43,7 @@ export const getBuildingEmployeeById = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'GET_ONE_BUILDING_EMPLOYEE',
                 data: res.data
@@ -74,7 +74,7 @@ export const getBuildingEmployeeByName = (name) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'GET_BUILDING_EMPLOYEE_BY_NAME',
                 data: res.data
@@ -107,7 +107,7 @@ export const createNewBuildingEmployee = (salaryId, data) => async dispatch => {
             salaryId: salaryId,
             data: data,
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'CREATE_BUILDING_EMPLOYEE',
                 data: res.data
@@ -140,7 +140,7 @@ export const updateBuildingEmployee = (empId,salaryId, data) => async dispatch =
             data: data
         })
         console.log("res data", res.data)
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'UPDATE_BUILDING_EMPLOYEE',
                 data: res.data
@@ -171,7 +171,7 @@ export const deleteBuildingEmployee = (id) => async dispatch => {
                 "Content-Type": "application/json" 
             },
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: 'DELETE_BUILDING_EMPLOYEE',
                 data: res.data

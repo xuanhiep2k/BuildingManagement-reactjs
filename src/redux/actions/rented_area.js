@@ -15,7 +15,7 @@ export const getAllRentedAreas = (floorId) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: GET_ALL,
                 data: res.data
@@ -46,7 +46,7 @@ export const getAllCompanyForRegistration = () => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: GET_ALL_COMPANIES,
                 data: res.data
@@ -78,7 +78,7 @@ export const updateRegisterdRentedArea = (id, registedRentedArea) => async dispa
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: UPDATE,
                 data: res.data
@@ -108,7 +108,7 @@ export const getTheRestArea = (floorId) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: GET_THE_REST_AREA,
                 data: res.data
@@ -140,7 +140,7 @@ export const createContract = (companyId, floorId, contract) => async dispatch =
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: REGISTER_CONTRACT,
                 data: res.data
@@ -171,7 +171,7 @@ export const deleteRentedArea = (id) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: DELETE,
                 data: res.data
@@ -201,7 +201,7 @@ export const getCompaniesForRegistrationByName = (name) => async dispatch => {
                 "Content-Type": "application/json"
             }
         })
-        if (res.status == 200) {
+        if (res.status === 200) {
             dispatch({
                 type: GET_COMPANIES_FOR_REGISTRATION_BY_NAME,
                 data: res.data

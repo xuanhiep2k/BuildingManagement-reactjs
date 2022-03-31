@@ -8,14 +8,12 @@ import { login } from '../redux/actions/login';
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [email, setEmail] = useState('');
+    const [setEmail] = useState('');
     const location = useLocation();
     const token = localStorage.getItem('token');
-    const checkError = false;
     const [loginOrSignUp, setLoginOrSignUp] = useState(false);
-    const [visible, setVisible] = useState(false);
+    const [setVisible] = useState(false);
     const dispatch = useDispatch();
-    const dataLogin = useSelector(state => state.login.data);
     const error = useSelector(state => state.login.error);
 
     useEffect(() => {
@@ -60,10 +58,6 @@ const Login = () => {
             loginIn.classList.toggle('block')
             loginUp.classList.toggle('none')
         }
-    }
-
-    function validateEmail(email) {
-        return email.trim().split('@')[1] !== 'gmail.com' ? false : true;
     }
 
     const signUp = (e) => {

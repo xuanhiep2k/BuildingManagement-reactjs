@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import '../css/company.css'
 import '../css/form.css'
 import '../css/dialog.css'
-import { Redirect, useLocation } from 'react-router';
+import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStatistics } from '../redux/actions/statistics';
 import { Link } from 'react-router-dom';
@@ -15,7 +15,7 @@ const Statistics = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getAllStatistics());
-    }, [location.pathname])
+    }, [location.pathname, dispatch])
 
     return (
         <>

@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import '../css/company.css'
 import '../css/form.css'
 import '../css/dialog.css'
-import { Redirect, useLocation } from 'react-router';
+import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Link } from 'react-router-dom';
 import '../css/select_option.css'
 import { getAllMonth } from '../redux/actions/month';
 import { getAllSalaryOfMonth } from '../redux/actions/monthly_salary';
@@ -22,7 +21,7 @@ const MonthlySalary = () => {
         setTimeout(()=>{
             dispatch(getAllSalaryOfMonth(months[0]))
         },300)
-    }, [location.pathname])
+    }, [location.pathname, months, dispatch])
 
     const onSelectChanged=(e)=>{
         const monthString = e.target.value
@@ -34,18 +33,13 @@ const MonthlySalary = () => {
         console.log(yearInt)
         let selectedMonthItem = null
         months.forEach(month=>{
-            if(month.month==monthInt && month.year==yearInt){
+            if(month.month === monthInt && month.year === yearInt){
                 selectedMonthItem=month;
             }
         })
         console.log("check",selectedMonthItem)
         dispatch(getAllSalaryOfMonth(selectedMonthItem))
         },100)
-    }
-
-    const onThongKe = ()=>{
-        
-
     }
 
     return (

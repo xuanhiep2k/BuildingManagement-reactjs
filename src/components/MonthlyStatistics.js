@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../css/company.css'
 import '../css/form.css'
 import '../css/dialog.css'
-import { Redirect, useLocation } from 'react-router';
+import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom';
@@ -22,7 +22,7 @@ const MonthlyStatistics = () => {
         setTimeout(()=>{
             dispatch(getAllMonthlyStatsOfCompanies(months[0]))
         },300)
-    }, [location.pathname])
+    }, [location.pathname, months, dispatch])
 
     const onSelectChanged=(e)=>{
         const monthString = e.target.value
@@ -34,18 +34,13 @@ const MonthlyStatistics = () => {
         console.log(yearInt)
         let selectedMonthItem = null
         months.forEach(month=>{
-            if(month.month==monthInt && month.year==yearInt){
+            if(month.month === monthInt && month.year === yearInt){
                 selectedMonthItem=month;
             }
         })
         console.log("check",selectedMonthItem)
         dispatch(getAllMonthlyStatsOfCompanies(selectedMonthItem))
         },100)
-    }
-
-    const onThongKe = ()=>{
-        
-
     }
 
     return (

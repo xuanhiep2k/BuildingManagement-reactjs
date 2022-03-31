@@ -7,15 +7,14 @@ import {
     Route,
 } from 'react-router-dom'
 // import "swiper/css/bundle";
-import { useSelector } from 'react-redux'
 import Home from './components/Home';
 import Login from './components/Login';
 import Footer from './components/Footer';
 import Contact from './components/Contact';
 import Company from './components/Company';
-import ServiceRegistration_Company from './components/ServiceRegistration_Company';
-import ServiceRegistration_RegisteredService from './components/ServiceRegistration_RegisteredServices';
-import ServiceRegistration_Services from './components/ServiceRegistration_Services';
+import ServiceRegistrationCompany from './components/ServiceRegistrationCompany.js';
+import ServiceRegistrationRegisteredService from './components/ServiceRegistrationRegisteredServices';
+import ServiceRegistrationServices from './components/ServiceRegistrationServices';
 import Service from './components/Service';
 import Salary  from './components/Salary';
 import BuildingEmployee  from './components/BuildingEmployee';
@@ -51,13 +50,13 @@ function App() {
                         <Service />
                     </Route>
                     <Route path="/service-registration/companies">
-                        <ServiceRegistration_Company />
+                        <ServiceRegistrationCompany />
                     </Route>
                     <Route path="/service-registration/registered-services">
-                        <ServiceRegistration_RegisteredService />
+                        <ServiceRegistrationRegisteredService />
                     </Route>
                     <Route path="/service-registration/services">
-                        <ServiceRegistration_Services />
+                        <ServiceRegistrationServices />
                     </Route>
                     <Route path="/salary">
                         <Salary/>

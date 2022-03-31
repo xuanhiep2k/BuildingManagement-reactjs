@@ -13,7 +13,7 @@ export const getAllStatistics = () => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === 200){
             dispatch({
                 type: GET_ALL_STATISTICS,
                 data: res.data

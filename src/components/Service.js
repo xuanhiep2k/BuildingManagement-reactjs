@@ -161,7 +161,7 @@ const Service = () =>{
     }
 
     const validateMandatory = (mandatory) => {
-        return (mandatory==1||mandatory==0);
+        return (mandatory === 1||mandatory === 0);
     }
 
     const validatePrice = (price) => {
@@ -171,6 +171,9 @@ const Service = () =>{
             return false;
     }
 
+    const onPrevent = (e) => {
+        e.preventDefault()
+    }
     return(
         <div style={{position: 'relative'}}>
             <div class="loading-content" style={{ display: iconLoad ? "block" : "none" }}>
@@ -217,7 +220,7 @@ const Service = () =>{
                                     Tìm kiếm dịch vụ:
                                     <br />
                             </div>                            
-                            <form action="javascript:" class="search-bar">
+                            <form action={onPrevent} class="search-bar">
                                 <input value={name} onChange={(e) => {onNameChange(e)}}type="search" name="search" pattern=".*\S.*" required />
                                 <button onClick={() => searchServiceByName()} class="search-btn" type="submit">
                                     <span>Search</span>

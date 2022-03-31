@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import { useLocation } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -7,7 +6,6 @@ import moment from 'moment';
 import { getAllRentedAreasOfCompany } from '../redux/actions/statistics_rented_areas';
 import { getCompanyById } from '../redux/actions/company';
 function StatisticsRentedAreas() {
-    const [isShow, setIsShow] = useState(false)
     const location = useLocation()
     const dispatch = useDispatch();
     const rentedAreasFromReducer = useSelector(state => state.statisticsRentedAreas.data)
@@ -22,7 +20,7 @@ function StatisticsRentedAreas() {
         return () => {
 
         }
-    }, [location.pathname])
+    }, [location.pathname, companyId, dispatch])
 
     return (
         <div style={{ position: 'relative' }}>

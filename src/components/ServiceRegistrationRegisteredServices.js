@@ -11,7 +11,7 @@ import moment from 'moment';
 import { getCompanyById } from '../redux/actions/company';
 
 
-function ServiceRegistration_RegisteredServices() {
+function ServiceRegistrationRegisteredServices() {
     const data = useSelector(state => state.registeredService.data)
     const [registeredServices, setRegisteredServices] = useState(data);
     // biến để show pop up sửa thông tin
@@ -232,5 +232,5 @@ function ServiceRegistration_RegisteredServices() {
     )
 }
 
-export default ServiceRegistration_RegisteredServices;
+export default ServiceRegistrationRegisteredServices;
 

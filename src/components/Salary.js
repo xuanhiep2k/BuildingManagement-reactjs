@@ -3,9 +3,8 @@ import '../css/company.css'
 import '../css/form.css'
 import '../css/dialog.css'
 import { useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { createNewSalary, getSalaryByService, deleteSalary, updateSalary, saveServiceToRedux } from '../redux/actions/salary';
+import { createNewSalary, getSalaryByService, deleteSalary, updateSalary } from '../redux/actions/salary';
 import {getServiceById} from '../redux/actions/service';
 
 const Salary = () => {

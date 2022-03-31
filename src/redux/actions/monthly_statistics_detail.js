@@ -13,7 +13,7 @@ export const getAllMonthlyBills = (companyId,monthId) => async dispatch => {
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === "200"){
             dispatch({
                 type: GET_MONTHLY_BILLS,
                 data: res.data
@@ -44,7 +44,7 @@ export const getAllMonthlyServiceBills = (companyId,monthId) => async dispatch =
                 "Content-Type": "application/json" 
             }
         })
-        if(res.status == 200){
+        if(res.status === "200"){
             dispatch({
                 type: GET_MONTHLY_SERVICE_BILLS,
                 data: res.data
