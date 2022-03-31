@@ -14,14 +14,14 @@ const Footer = () => {
                     <div className="footer-contact-container">
                         <div className="footer-contact-item footer-contact-facebook">
                             <div className="footer-contact-title">Facebook</div>
-                            <div className="footer-contact-content">VŨ ĐÌNH CÔNG</div>    
+                            <div className="footer-contact-content">TRẦN XUÂN HIỆP</div>    
                         </div>
                         <div className="footer-contact-item footer-contact-email">
                             <div className="footer-contact-title">
                                 <i className='bx bxs-envelope footer-contact-icon'></i>
                                 Email
                             </div>
-                            <div className="footer-contact-content">vuthanhcong110502@gmail.com</div>
+                            <div className="footer-contact-content">tranxuanhiepcmd3@gmail.com</div>
                         </div>
                         <div className="footer-contac-item footer-contact-phone">
                             <div className="footer-contact-title">
@@ -29,7 +29,7 @@ const Footer = () => {
                                 Số điện thoại
                             </div>
                             <div className="footer-contact-content">
-                                <span>+84</span> 375511200
+                                <span>+84</span> 865953247
                             </div>
                         </div>
                     </div>
@@ -39,14 +39,14 @@ const Footer = () => {
                     <div className="footer-contact-container">
                         <div className="footer-contact-item footer-contact-facebook">
                             <div className="footer-contact-title">Facebook</div>
-                            <div className="footer-contact-content">ĐÀO KỶ NGUYÊN</div>    
+                            <div className="footer-contact-content">ĐÀO ĐỨC DANH</div>    
                         </div>
                         <div className="footer-contact-item footer-contact-email">
                             <div className="footer-contact-title">
                                 <i className='bx bxs-envelope footer-contact-icon'></i>
                                 Email
                             </div>
-                            <div className="footer-contact-content">daokynguyen2000@gmail.com</div>
+                            <div className="footer-contact-content">danhcn@gmail.com</div>
                         </div>
                         <div className="footer-contac-item footer-contact-phone">
                             <div className="footer-contact-title">
